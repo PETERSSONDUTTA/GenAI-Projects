@@ -32,7 +32,8 @@ st.markdown("**Default prompt:** Make a note of whatever taught in this transcri
 
 import os
 load_dotenv()
-GOOGLE_API_KEY=os.getenv('GOOGLE_API_KEY')
+# GOOGLE_API_KEY=os.getenv('GOOGLE_API_KEY')
+GOOGLE_API_KEY=st.secrets["GOOGLE_API_KEY"]
 genai.configure(api_key=GOOGLE_API_KEY)
 
 # for m in genai.list_models():
