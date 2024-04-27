@@ -26,7 +26,7 @@ url = st.text_input("")
 
 prompt=""
 # st.header("Enter the prompt if you want:")
-st.markdown("**Default prompt:** Make a note of whatever taught in this transcript elaborately and explain each of the concepts and terms discussed. Explain in a detailed manner. Expound and interpret the terms.", unsafe_allow_html=True)
+# st.markdown("**Default prompt:** Make a note of whatever taught in this transcript elaborately and explain each of the concepts and terms discussed. Explain in a detailed manner. Expound and interpret the terms.", unsafe_allow_html=True)
 # # video_id = st.text_area("Enter Below", height=200)
 # prompt= st.text_area("Enter Below", height=200)
 

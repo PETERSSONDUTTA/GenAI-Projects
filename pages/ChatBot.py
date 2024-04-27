@@ -24,7 +24,7 @@ def get_gemini_conversation(prompt, uploaded_file):
 
 
 def main():
-    st.title("Chatbot with Gemini")
+    st.title("Peter's Chatbot")
     user_prompt = st.text_area("You:", height=200)
     uploaded_file = st.file_uploader("Choose an image...", type=["jpg", "jpeg", "png"])
     img=None
