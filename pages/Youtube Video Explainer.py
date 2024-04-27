@@ -22,7 +22,7 @@ def get_transcript(video_id):
 
 st.title("Youtube Video Explainer")
 # st.markdown("**Enter the the Video ID**", unsafe_allow_html=True)
-st.header("Enter the the Youtube Video URL:")
+st.header("Enter Youtube Video URL:")
 url = st.text_input("")
 
 prompt=""
