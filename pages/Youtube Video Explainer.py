@@ -1,11 +1,7 @@
 # streamlit run app.py --server.maxUploadSize 400
 import streamlit as st
-import pathlib
-import textwrap
 import google.generativeai as genai
 from dotenv import load_dotenv
-from IPython.display import display
-from IPython.display import Markdown
 from youtube_transcript_api import YouTubeTranscriptApi
 
 def get_transcript(url):

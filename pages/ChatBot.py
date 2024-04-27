@@ -2,12 +2,9 @@
 import streamlit as st
 import google.generativeai as genai
 from dotenv import load_dotenv
-from IPython.display import display
-from IPython.display import Markdown
-from youtube_transcript_api import YouTubeTranscriptApi
 import os
 import PIL
-from PIL import Image
+
 
 
 
