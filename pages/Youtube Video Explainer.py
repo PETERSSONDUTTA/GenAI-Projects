@@ -3,9 +3,10 @@ import streamlit as st
 import google.generativeai as genai
 from dotenv import load_dotenv
 from youtube_transcript_api import YouTubeTranscriptApi
+from pytube import YouTube
 
-def get_transcript(url):
-    video_id = url.split("=")[1]
+def get_transcript(video_id):
+    # video_id = url.split("=")[1]
 
     # Retrieve the transcript using YouTubeTranscriptApi
     transcript_list = YouTubeTranscriptApi.get_transcript(video_id)
@@ -23,6 +24,7 @@ st.title("Youtube Video Explainer")
 # st.markdown("**Enter the the Video ID**", unsafe_allow_html=True)
 st.header("Enter the the Youtube Video URL:")
 url = st.text_input("")
+video_id = YouTube(url).video_id
 
 prompt=""
 # st.header("Enter the prompt if you want:")
@@ -41,7 +43,7 @@ genai.configure(api_key=GOOGLE_API_KEY)
 #     print(m.name)
 transcript_string=""
 if url:
-    transcript_string = get_transcript(url)
+    transcript_string = get_transcript(video_id)
 
 if transcript_string:
     try: 
