@@ -24,7 +24,6 @@ st.title("Youtube Video Explainer")
 # st.markdown("**Enter the the Video ID**", unsafe_allow_html=True)
 st.header("Enter the the Youtube Video URL:")
 url = st.text_input("")
-video_id = YouTube(url).video_id
 
 prompt=""
 # st.header("Enter the prompt if you want:")
@@ -43,6 +42,7 @@ genai.configure(api_key=GOOGLE_API_KEY)
 #     print(m.name)
 transcript_string=""
 if url:
+    video_id = YouTube(url).video_id
     transcript_string = get_transcript(video_id)
 
 if transcript_string:
