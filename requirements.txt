@@ -6,3 +6,6 @@ youtube_transcript_api==0.6.2
 google-generativeai
 google
 pytube
+llama-index-llms-gemini
+llama-index
+llama-index-core
