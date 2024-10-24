@@ -72,9 +72,10 @@ genai.configure(api_key=GOOGLE_API_KEY)
 transcript_string=""
 if url:
     # video_id = YouTube(url).video_id
-    video_id = get_video_id(url)
+    # video_id = get_video_id(url)
     # transcript_string = get_transcript(video_id)
     transcript_string = download_transcript(url)
+    st.write(transcript_string)
 
 if transcript_string:
     try: 
