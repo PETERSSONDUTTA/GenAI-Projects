@@ -75,7 +75,7 @@ if url:
     # video_id = get_video_id(url)
     # transcript_string = get_transcript(video_id)
     transcript_string = download_transcript(url)
-    st.write(transcript_string)
+    # st.write(transcript_string)
 
 if transcript_string:
     try: 
