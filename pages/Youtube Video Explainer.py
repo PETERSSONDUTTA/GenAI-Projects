@@ -74,7 +74,7 @@ if url:
     # video_id = YouTube(url).video_id
     video_id = get_video_id(url)
     # transcript_string = get_transcript(video_id)
-    transcript_string = download_transcript(video_id)
+    transcript_string = download_transcript(url)
 
 if transcript_string:
     try: 
