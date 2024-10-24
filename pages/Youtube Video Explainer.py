@@ -15,6 +15,20 @@ def get_transcript(video_id):
     transcript_string = " ".join([item['text'] for item in transcript_list])
     return transcript_string
 
+def get_video_id(youtube_url):
+    """Extract video ID from YouTube URL."""
+    query = urlparse(youtube_url)
+    if query.hostname == 'youtu.be':  # short URL
+        return query.path[1:]
+    if query.hostname in ('www.youtube.com', 'youtube.com'):
+        if query.path == '/watch':
+            return parse_qs(query.query)['v'][0]
+        if query.path[:7] == '/embed/':
+            return query.path.split('/')[2]
+        if query.path[:3] == '/v/':
+            return query.path.split('/')[2]
+    return None
+
 
 # def to_markdown(text):
 #   text = text.replace('•', '  *')
@@ -42,7 +56,8 @@ genai.configure(api_key=GOOGLE_API_KEY)
 #     print(m.name)
 transcript_string=""
 if url:
-    video_id = YouTube(url).video_id
+    # video_id = YouTube(url).video_id
+    video_id = get_video_id(url)
     transcript_string = get_transcript(video_id)
 
 if transcript_string:
@@ -56,5 +71,3 @@ if transcript_string:
         
     except Exception as e:
          st.write(f'{type(e).__name__}: {e}')
-
-
