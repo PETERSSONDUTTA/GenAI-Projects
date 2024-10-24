@@ -80,10 +80,11 @@ if url:
 if transcript_string:
     try: 
         model = genai.GenerativeModel('gemini-1.5-pro-latest')
-        if prompt:
-            response = model.generate_content(f"{prompt} Transcript: {transcript_string}")
-        else:
-            response = model.generate_content(f"Make a note of whatever taught in this transcript elaborately and explain each of the concepts and terms discussed. Explain in a detailed manner. Expound and interpret the terms. Transcript: {transcript_string}")
+        # if prompt:
+        #     response = model.generate_content(f"{prompt} Transcript: {transcript_string}")
+        # else:
+        #     response = model.generate_content(f"Make a note of whatever taught in this transcript elaborately and explain each of the concepts and terms discussed. Explain in a detailed manner. Expound and interpret the terms. Transcript: {transcript_string}")
+        response = model.generate_content(f"Make a note of whatever taught in this transcript elaborately and explain each of the concepts and terms discussed. Explain in a detailed manner. Expound and interpret the terms. Transcript: {transcript_string}")
         st.write(response.text)
         
     except Exception as e:
