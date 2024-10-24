@@ -30,6 +30,20 @@ def get_video_id(youtube_url):
             return query.path.split('/')[2]
     return None
 
+def download_transcript(youtube_url, language='en'):
+    """Download the transcript from a YouTube video."""
+    video_id = get_video_id(youtube_url)
+    if video_id:
+        try:
+            transcript = YouTubeTranscriptApi.get_transcript(video_id, languages=[language])
+            # Combine the transcript segments into a full text
+            full_transcript = " ".join([item['text'] for item in transcript])
+            return full_transcript
+        except Exception as e:
+            return f"Error: {str(e)}"
+    else:
+        return "Invalid YouTube URL"
+
 
 # def to_markdown(text):
 #   text = text.replace('•', '  *')
@@ -59,7 +73,8 @@ transcript_string=""
 if url:
     # video_id = YouTube(url).video_id
     video_id = get_video_id(url)
-    transcript_string = get_transcript(video_id)
+    # transcript_string = get_transcript(video_id)
+    transcript_string = download_transcript(video_id)
 
 if transcript_string:
     try: 
