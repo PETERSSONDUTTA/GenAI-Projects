@@ -4,6 +4,7 @@ import google.generativeai as genai
 from dotenv import load_dotenv
 from youtube_transcript_api import YouTubeTranscriptApi
 from pytube import YouTube
+from urllib.parse import urlparse, parse_qs
 
 def get_transcript(video_id):
     # video_id = url.split("=")[1]
