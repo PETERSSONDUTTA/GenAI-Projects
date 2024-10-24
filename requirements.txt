@@ -10,4 +10,3 @@ llama-index-llms-gemini
 llama-index
 llama-index-core
 urllib3
-pycopy-urllib.parse
